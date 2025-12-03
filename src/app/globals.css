@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+@layer base {
+  .flex-box {
+    @apply flex items-center justify-between;
+  }
+  p {
+    @apply text-[12px];
+  }
+  h1 {
+    @apply text-[32px] font-semibold;
+  }
+  h2 {
+    @apply text-[22px] font-semibold;
+  }
+  h3 {
+    @apply text-[20px]  font-semibold;
+  }
+  h4 {
+    @apply text-lg font-semibold;
+  }
+  h5 {
+    @apply text-[15px] font-normal;
+  }
+}
+
+.show {
+  display: block !important;
+}
