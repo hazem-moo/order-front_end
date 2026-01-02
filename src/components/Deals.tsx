@@ -1,34 +1,32 @@
-import React from "react";
+import { getStrapi } from "../utils/FUnc";
+import { GetPropsStrapi } from "@/utils/types";
+import Link from "next/link";
 
-const Deals = () => {
+const shuffleData = (data: GetPropsStrapi[]) =>
+  [...data].sort(() => Math.random() - 0.5).slice(0, 4);
+
+const Deals = async () => {
+  const data: GetPropsStrapi[] = await getStrapi(`/menus?populate=*`);
+  const shuffle = shuffleData(data);
+
+  const shuffleList = shuffle.map((el) => (
+    <Link
+      href={`/menu/${el.id}`}
+      key={el.id}
+      className="flex w-full h-60 rounded-xl cover bg-center items-end justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${el.img.url})`,
+      }}
+    >
+      <h3 className="text-orange-500 p-2.5 bg-gray-900 w-full">{el.name}</h3>
+    </Link>
+  ));
+
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto my-5">
       <h2>Up to -40% 🎊 Order.uk exclusive deals</h2>1
-      <div className="grid grid-cols-1 sm:grid-cols-3">
-        <div className="bg-[url(/deals.png)] flex items-start justify-end flex-col  h-52 relative m-4 overflow-hidden rounded-[10px]">
-          <div className="absolute w-full h-full z-1 bg-gray-600 opacity-[.3]"></div>
-          <p className="absolute right-0 top-0 p-2.5 text-white bg-black">
-            -20%
-          </p>
-          <h5 className="text-orange-500 z-10 pl-2">Restaurant</h5>
-          <h3 className="text-white mb-2.5 z-10 pl-2">Chef Burgers London</h3>
-        </div>
-        <div className="bg-[url(/deals.png)] flex items-start justify-end flex-col  h-52 relative m-4 overflow-hidden rounded-[10px]">
-          <div className="absolute w-full h-full z-1 bg-gray-600 opacity-[.3]"></div>
-          <p className="absolute right-0 top-0 p-2.5 text-white bg-black">
-            -20%
-          </p>
-          <h5 className="text-orange-500 z-10 pl-2">Restaurant</h5>
-          <h3 className="text-white mb-2.5 z-10 pl-2">Chef Burgers London</h3>
-        </div>
-        <div className="bg-[url(/deals.png)] flex items-start justify-end flex-col  h-52 relative m-4 overflow-hidden rounded-[10px]">
-          <div className="absolute w-full h-full z-1 bg-gray-600 opacity-[.3]"></div>
-          <p className="absolute right-0 top-0 p-2.5 text-white bg-black">
-            -20%
-          </p>
-          <h5 className="text-orange-500 z-10 pl-2">Restaurant</h5>
-          <h3 className="text-white mb-2.5 z-10 pl-2">Chef Burgers London</h3>
-        </div>
+      <div className="flex flex-col sm:flex-row my-5 gap-5 p-5 sm:p-0">
+        {shuffleList}
       </div>
     </section>
   );

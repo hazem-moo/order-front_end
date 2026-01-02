@@ -3,7 +3,7 @@ import React from "react";
 
 const About_us = () => {
   return (
-    <section className="container mt-7 mx-auto">
+    <section className="container my-7 mx-auto">
       <div className="flex-box flex-col sm:flex-row my-8">
         <h2>Know more about us!</h2>
         <p>Frequent Questions Who we are? Partner Program Help & Support</p>

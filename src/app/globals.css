@@ -30,3 +30,7 @@
 .show {
   display: block !important;
 }
+
+.cover {
+  background-size: 100% 100%;
+}
