@@ -28,7 +28,7 @@ const Category = async () => {
         alt=""
         width={250}
         height={250}
-        src={el.category_img?.url ? el.category_img.url : ""}
+        src={el.category_img?.url ? el.category_img.url : "/place.jpg"}
         className="min-h-48"
       />
       <h3>{el.category}</h3>
