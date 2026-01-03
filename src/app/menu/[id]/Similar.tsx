@@ -16,7 +16,7 @@ const Similar = ({ data }: SimilarProps) => {
         height={150}
         loading="lazy"
         src={el.img.url}
-        className="w-full h-fit"
+        className="w-full h-full"
       />
       <h3 className="h-10 w-full text-center bg-gray-900 text-orange-500 ">
         {el.name}
