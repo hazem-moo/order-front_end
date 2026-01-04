@@ -7,7 +7,7 @@ const Similar = ({ data }: SimilarProps) => {
   const dataList = data.map((el) => (
     <Link
       href={`/menu/${el.id}`}
-      className="h-52 w-3/4 mx-auto sm:mx-0 sm:w-full overflow-hidden rounded-2xl flex flex-col justify-between items-center"
+      className="h-52 w-3/4 relative mx-auto sm:mx-0 sm:w-full overflow-hidden rounded-2xl flex flex-col justify-between items-center"
       key={el.id}
     >
       <Image
@@ -18,7 +18,7 @@ const Similar = ({ data }: SimilarProps) => {
         src={el.img.url}
         className="w-full h-full"
       />
-      <h3 className="h-10 w-full text-center bg-gray-900 text-orange-500 ">
+      <h3 className="h-10 w-full text-center bg-gray-900 text-orange-500 absolute bottom-0 left-0">
         {el.name}
       </h3>
     </Link>

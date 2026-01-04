@@ -13,12 +13,14 @@ const Deals = async () => {
     <Link
       href={`/menu/${el.id}`}
       key={el.id}
-      className="flex w-full h-60 rounded-xl cover bg-center items-end justify-center overflow-hidden"
+      className="flex relative w-full h-60 rounded-xl cover bg-center items-end justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${el.img.url})`,
       }}
     >
-      <h3 className="text-orange-500 p-2.5 bg-gray-900 w-full">{el.name}</h3>
+      <h3 className="text-orange-500 p-2.5 bg-gray-900 w-full absolute bottom-0 left-0 z-10">
+        {el.name}
+      </h3>
     </Link>
   ));
 
