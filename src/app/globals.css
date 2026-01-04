@@ -34,3 +34,7 @@
 .cover {
   background-size: 100% 100%;
 }
+.cover-bg {
+  background-size: 80% 50%;
+  background: no-repeat center;
+}
