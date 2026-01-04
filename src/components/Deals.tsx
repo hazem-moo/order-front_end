@@ -24,7 +24,7 @@ const Deals = async () => {
 
   return (
     <section className="container mx-auto my-5">
-      <h2>Up to -40% 🎊 Order.uk exclusive deals</h2>1
+      <h2 className="py-5">Up to -40% 🎊 Order.uk exclusive deals</h2>1
       <div className="flex flex-col sm:flex-row my-5 gap-5 p-5 sm:p-0">
         {shuffleList}
       </div>

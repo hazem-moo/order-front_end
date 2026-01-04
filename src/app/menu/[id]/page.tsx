@@ -28,13 +28,12 @@ const pageId = async ({ params }: PropsId) => {
 
   return (
     <section className="my-3">
-      <div className="hidden sm:block  bg-[url('/category.jpg')] center sm:h-[600px] cover w-full bg-fixed"></div>
       <Image
         alt=""
         width={300}
         height={500}
         src={`/category.jpg`}
-        className="w-full my-5 sm:hidden"
+        className="w-full my-5 "
       />
       {detailsId}
       <Similar data={similarData} />
