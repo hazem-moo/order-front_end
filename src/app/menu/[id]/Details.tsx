@@ -1,3 +1,4 @@
+import Buttom from "@/components/Buttom";
 import { GetPropsStrapi } from "@/utils/types";
 import Image from "next/image";
 import React from "react";
@@ -16,7 +17,7 @@ const Details = ({
     <section>
       <div className="container mx-auto my-5 flex flex-col sm:flex-row justify-between items-center">
         <Image
-          alt=""
+          alt={name}
           width={250}
           height={300}
           src={img.url}
@@ -28,6 +29,7 @@ const Details = ({
           <p>{description}</p>
           <h4>price: {price}</h4>
           <h5>{category}</h5>
+          <Buttom />
         </div>
       </div>
     </section>

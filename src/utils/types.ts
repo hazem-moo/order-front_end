@@ -1,6 +1,12 @@
+import { Dispatch, ReactNode, SetStateAction } from "react";
+
 export type BrandProps = {
   w: number;
   h: number;
+};
+
+export type ChildrenProps = {
+  children: ReactNode;
 };
 
 export type OpenProps = {
@@ -32,4 +38,23 @@ export type PropsId = {
 
 export type SimilarProps = {
   data: GetPropsStrapi[];
+};
+
+export type MenuContextt = {
+  username: string;
+  email: string;
+  id: number;
+  name: string;
+  description: string;
+  category: string;
+  price: number;
+  category_img?: { url: string };
+  img: { url: string };
+};
+
+export type MenuContextProps = {
+  menu: MenuContextt[];
+  setMenu: Dispatch<SetStateAction<MenuContextt[]>>;
+  addMenu: (item: MenuContextt) => void;
+  removeMenu: (id: number) => void;
 };

@@ -1,5 +1,6 @@
 import Deals from "@/components/Deals";
 import Search from "@/components/Search";
+import TotalMenu from "@/components/TotalMenu";
 import Image from "next/image";
 import React from "react";
 import { FaMotorcycle } from "react-icons/fa";
@@ -42,6 +43,7 @@ const Restaurants = () => {
       </div>
       <Deals />
       <Search />
+      <TotalMenu />
     </section>
   );
 };

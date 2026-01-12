@@ -1,8 +1,11 @@
+import Brand from "@/components/Brand";
+import Image from "next/image";
 import React from "react";
 
 const loading = () => {
   return (
-    <div className="text-center h-[70vh] w-full flex flex-col justify-center items-center">
+    <div className="text-center h-[70vh] w-full flex flex-col justify-evenly items-center">
+      <Brand w={290} h={50} />
       <svg
         className="mx-auto size-8 animate-spin text-indigo-600"
         xmlns="http://www.w3.org/2000/svg"
