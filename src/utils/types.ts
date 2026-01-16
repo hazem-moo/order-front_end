@@ -40,9 +40,16 @@ export type SimilarProps = {
   data: GetPropsStrapi[];
 };
 
-export type MenuContextt = {
-  username: string;
+export type GetOrderProps = {
+  usename: string;
   email: string;
+  cart: MenuContextt[];
+};
+
+export type MenuContextt = {
+  username?: string;
+  email?: string;
+  productId?: number;
   id: number;
   name: string;
   description: string;

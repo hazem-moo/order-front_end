@@ -33,7 +33,7 @@ const pageId = async ({ params }: PropsId) => {
         width={300}
         height={500}
         src={`/category.jpg`}
-        className="w-full my-5 "
+        className="w-full my-5 max-h-[550px]"
       />
       {detailsId}
       <Similar data={similarData} />

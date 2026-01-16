@@ -11,8 +11,6 @@ const Details = ({
   img,
   price,
 }: GetPropsStrapi) => {
-  console.log(category, description, name, id, img);
-
   return (
     <section>
       <div className="container mx-auto my-5 flex flex-col sm:flex-row justify-between items-center">
@@ -29,7 +27,14 @@ const Details = ({
           <p>{description}</p>
           <h4>price: {price}</h4>
           <h5>{category}</h5>
-          <Buttom />
+          <Buttom
+            category={category}
+            description={description}
+            id={id}
+            img={img}
+            name={name}
+            price={price}
+          />
         </div>
       </div>
     </section>

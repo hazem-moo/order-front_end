@@ -18,3 +18,22 @@ export const getStrapi = async (link) => {
     console.error(error);
   }
 };
+
+export const getOrderStrapi = async () => {
+  try {
+    const res = await clientAxios.get(`/orders?populate=*`);
+    return res.data.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const postToStrapi = async (item) => {
+  try {
+    const res = await clientAxios.post(`/orders`, item);
+    return res.data.data;
+  } catch (error) {
+    console.error("❌ Request failed:", error.response?.data || error.message);
+    console.error("🔍 Full error:", error);
+  }
+};

@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { ChildrenProps, MenuContextProps, MenuContextt } from "./types";
 
 const MenuProvider = createContext<undefined | MenuContextProps>(undefined);
@@ -23,3 +23,9 @@ const MenuContext = ({ children }: ChildrenProps) => {
 };
 
 export default MenuContext;
+
+export const useMenu = () => {
+  const context = useContext(MenuProvider);
+  if (!context) throw new Error("not find context...");
+  return context;
+};

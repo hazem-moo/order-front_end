@@ -1,4 +1,5 @@
 "use client";
+import { useMenu } from "@/utils/MenuContext";
 import { UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
@@ -7,6 +8,8 @@ import { FaBasketShopping } from "react-icons/fa6";
 
 const Upperbar = () => {
   const { user } = useUser();
+  const { menu } = useMenu();
+
   return (
     <div className="container flex-box justify-evenly">
       <div className="hidden sm:flex flex-box gap-x-3">
@@ -34,7 +37,7 @@ const Upperbar = () => {
       </Link>
       <div className="grow sm:grow-0 flex-box gap-x-3 bg-gray-500 text-white py-2.5 px-5 cursor-pointer">
         <FaBasketShopping className="text-lg" />
-        <p>2 items</p>
+        <p>{menu.length} items</p>
       </div>
     </div>
   );
