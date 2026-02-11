@@ -7,6 +7,7 @@ const Details = ({
   category,
   description,
   name,
+  quantity,
   id,
   img,
   price,
@@ -34,6 +35,7 @@ const Details = ({
             img={img}
             name={name}
             price={price}
+            quantity={quantity}
           />
         </div>
       </div>

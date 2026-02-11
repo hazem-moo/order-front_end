@@ -11,7 +11,7 @@ const pageId = async ({ params }: PropsId) => {
   const findId = data.filter((el) => el.id === Number(id));
 
   const similarData = data.filter(
-    (el) => el.category === findId[0].category && el.id !== findId[0].id
+    (el) => el.category === findId[0].category && el.id !== findId[0].id,
   );
 
   const detailsId = findId.map((el) => (
@@ -23,6 +23,7 @@ const pageId = async ({ params }: PropsId) => {
       price={el.price}
       img={el.img}
       category={el.category}
+      quantity={el.quantity}
     />
   ));
 

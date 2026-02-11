@@ -38,3 +38,7 @@
   background-size: 80% 50%;
   background: no-repeat center;
 }
+
+.shadow-box {
+  box-shadow: 3px 3px 8px #333333;
+}

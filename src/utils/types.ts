@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dispatch, ReactNode, SetStateAction } from "react";
 
 export type BrandProps = {
@@ -16,6 +17,7 @@ export type OpenProps = {
 
 export type GetPropsStrapi = {
   id: number;
+  quantity: number;
   name: string;
   description: string;
   category: string;
@@ -43,6 +45,7 @@ export type SimilarProps = {
 export type GetOrderProps = {
   usename: string;
   email: string;
+  orderId: number;
   cart: MenuContextt[];
 };
 
@@ -51,12 +54,12 @@ export type MenuContextt = {
   email?: string;
   productId?: number;
   id: number;
+  orderId?: number;
+  quantity: number;
   name: string;
-  description: string;
   category: string;
   price: number;
-  category_img?: { url: string };
-  img: { url: string };
+  img: string | any;
 };
 
 export type MenuContextProps = {

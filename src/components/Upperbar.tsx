@@ -1,14 +1,41 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useMenu } from "@/utils/MenuContext";
+import { GetOrderProps } from "@/utils/types";
 import { UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaMapMarkerAlt, FaUserCircle } from "react-icons/fa";
 import { FaBasketShopping } from "react-icons/fa6";
 
 const Upperbar = () => {
   const { user } = useUser();
-  const { menu } = useMenu();
+  const { menu, setMenu } = useMenu();
+
+  useEffect(() => {
+    const getOrder = async (): Promise<GetOrderProps[]> => {
+      const res = await fetch(`/api/orders`, { method: "GET" });
+      return res.json();
+    };
+    const fetchOrder = async () => {
+      const data: any = (await getOrder())
+        .filter((el) => el.email === user?.primaryEmailAddress?.emailAddress)
+        .flatMap((item) =>
+          item.cart.map((el) => ({
+            orderId: item.orderId,
+            productId: el.productId,
+            img: el.img,
+            name: el.name,
+            price: el.price,
+            quantity: el.quantity,
+            category: el.category,
+          })),
+        );
+      setMenu(data);
+    };
+    fetchOrder();
+  }, [user]);
 
   return (
     <div className="container flex-box justify-evenly">
@@ -35,10 +62,13 @@ const Upperbar = () => {
           </>
         )}
       </Link>
-      <div className="grow sm:grow-0 flex-box gap-x-3 bg-gray-500 text-white py-2.5 px-5 cursor-pointer">
+      <Link
+        href={`/order`}
+        className="grow sm:grow-0 flex-box gap-x-3 bg-gray-500 text-white py-2.5 px-5 cursor-pointer"
+      >
         <FaBasketShopping className="text-lg" />
         <p>{menu.length} items</p>
-      </div>
+      </Link>
     </div>
   );
 };
