@@ -52,7 +52,7 @@ const Order = () => {
         loading="lazy"
         src={el.img}
       />
-      <div className="flex flex-col h-[200px] justify-evenly ">
+      <div className="flex flex-col h-52 justify-evenly ">
         <h4>{el.name}</h4>
         <h5>price: {el.price}</h5>
         <h5>quantity: {el.quantity}</h5>
@@ -75,7 +75,7 @@ const Order = () => {
         width={300}
         height={300}
         src={`/orders.jpg`}
-        className="w-full max-h-[450px] my-2.5"
+        className="w-full max-h-[450] my-2.5"
       />
       {menu.length === 0 ? (
         <h1 className="text-center my-40">no iteme her</h1>
