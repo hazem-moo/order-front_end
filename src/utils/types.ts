@@ -45,7 +45,8 @@ export type SimilarProps = {
 export type GetOrderProps = {
   usename: string;
   email: string;
-  orderId: number;
+  orderId?: number;
+  id: number;
   cart: MenuContextt[];
 };
 

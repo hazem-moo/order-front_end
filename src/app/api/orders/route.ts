@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { NextResponse } from "next/server";
-
 const STRAPI_URL = process.env.STRAPI_URL!;
 const API_TOKEN = process.env.STRAPI_TOKEN!;
 

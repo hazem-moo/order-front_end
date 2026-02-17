@@ -2,7 +2,6 @@
 import { useMenu } from "@/utils/MenuContext";
 import { MenuContextt } from "@/utils/types";
 import Image from "next/image";
-import React from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
 const deleteFromStrapi = async (id: number) => {
@@ -32,12 +31,10 @@ const Order = () => {
     },
     [],
   );
-  console.log(findQuentity);
-  console.log(menu);
 
   const removeOrder = async (id: number) => {
-    await deleteFromStrapi(id);
     removeMenu(id);
+    await deleteFromStrapi(id);
   };
 
   const orderList = findQuentity.map((el) => (
@@ -65,8 +62,10 @@ const Order = () => {
     </div>
   ));
 
+  const xx = findQuentity.map((el) => console.log(el.id));
+  console.log(xx);
+
   const findPrice = menu.reduce((total, item) => (total += item.price), 0);
-  console.log(findPrice);
 
   return (
     <section className="">

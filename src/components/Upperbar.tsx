@@ -23,6 +23,7 @@ const Upperbar = () => {
         .filter((el) => el.email === user?.primaryEmailAddress?.emailAddress)
         .flatMap((item) =>
           item.cart.map((el) => ({
+            id: item.id,
             orderId: item.orderId,
             productId: el.productId,
             img: el.img,

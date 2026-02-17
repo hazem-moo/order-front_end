@@ -23,7 +23,7 @@ const Details = ({
           loading="lazy"
           className="w-full"
         />
-        <div className="flex flex-col w-full h-[300px] justify-evenly items-start">
+        <div className="flex flex-col w-full h-80 justify-evenly items-start sm:ml-2.5 ml-0">
           <h3>product food: {name}</h3>
           <p>{description}</p>
           <h4>price: {price}</h4>

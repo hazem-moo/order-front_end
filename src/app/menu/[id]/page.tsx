@@ -1,6 +1,5 @@
 import { getStrapi } from "@/utils/FUnc";
 import { GetPropsStrapi, PropsId } from "@/utils/types";
-import Image from "next/image";
 import Details from "./Details";
 import Similar from "./Similar";
 import Deals from "@/components/Deals";
@@ -29,13 +28,6 @@ const pageId = async ({ params }: PropsId) => {
 
   return (
     <section className="my-3">
-      <Image
-        alt=""
-        width={300}
-        height={500}
-        src={`/category.jpg`}
-        className="w-full my-5 max-h-[550px]"
-      />
       {detailsId}
       <Similar data={similarData} />
       <Deals />
